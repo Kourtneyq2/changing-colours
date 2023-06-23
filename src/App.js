@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App = () => {
+
+    const [colourClass, setColourClass] = useState(' hidden');
+
+    const [clearColor, setClearColor] = useState('x-hidden');
+
+    useEffect(() => {
+        console.log(colourClass)
+    })
+
+    const [message, setMessage] = useState('');
+
+
+
+    const blueColor = () => {
+        setColourClass('blue')
+        setClearColor('x-show')
+    }
+    const redColor = () => {
+        setColourClass('red')
+        setClearColor('x-show')
+    }
+    const orangeColor = () => {
+        setColourClass('orange')
+        setClearColor('x-show')
+    }
+
+    const xx = () => {
+        setClearColor('x-hidden')
+        setColourClass(' hidden')
+    }
+
+    const typeMessage = () => {
+        setMessage('')
+        console.log(message)
+    }
+    
+
+    return(
+        <div>
+            <div className={colourClass} id="box_change"><input type="text" onChange={typeMessage}></input></div>
+            <button onClick={blueColor}>Blue</button>
+            <button onClick={redColor}>Red</button>
+            <button onClick={orangeColor}>Orange</button>
+            <button onClick={xx} className={clearColor} id='x'>X</button>
+        </div>
+    )
 }
-
-export default App;
