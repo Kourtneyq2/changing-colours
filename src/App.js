@@ -32,15 +32,8 @@ export const App = () => {
         setColourClass(' hidden')
     }
 
-    const typeMessage = () => {
-        setMessage('')
-        console.log(message)
-    }
-    
-
     return(
         <div>
-            <div className={colourClass} id="box_change"><input type="text" onChange={typeMessage}></input></div>
             <button onClick={blueColor}>Blue</button>
             <button onClick={redColor}>Red</button>
             <button onClick={orangeColor}>Orange</button>
