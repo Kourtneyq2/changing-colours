@@ -34,6 +34,7 @@ export const App = () => {
 
     return(
         <div>
+            <div className={colourClass} id="box_change"></div>
             <button onClick={blueColor}>Blue</button>
             <button onClick={redColor}>Red</button>
             <button onClick={orangeColor}>Orange</button>
